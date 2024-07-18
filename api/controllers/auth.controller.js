@@ -10,7 +10,12 @@ export const register = async (req, res, next) => {
       ...req.body,
       password: hash,
     });
-
+    // const newUser=new User({
+    //   username:"test",
+    //   email:"test",
+    //   password:"test",
+    //   country:"test",
+    // })
     await newUser.save();
     res.status(201).send("User has been created.");
   } catch (err) {
@@ -34,7 +39,7 @@ export const login = async (req, res, next) => {
       },
       process.env.JWT_KEY
     );
-
+    console.log(token)
     const { password, ...info } = user._doc;
     res
       .cookie("accessToken", token, {

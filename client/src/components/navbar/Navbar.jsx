@@ -39,15 +39,12 @@ function Navbar() {
       <div className="container">
         <div className="logo">
           <Link className="link" to="/">
-            <span className="text">fiverr</span>
+            <span className="text">TaskBuddy</span>
           </Link>
           <span className="dot">.</span>
         </div>
         <div className="links">
-          <span>Fiverr Business</span>
-          <span>Explore</span>
-          <span>English</span>
-          {!currentUser?.isSeller && <span>Become a Seller</span>}
+          {/* {!currentUser?.isSeller && <spa>Become a Seller</span>} */}
           {currentUser ? (
             <div className="user" onClick={() => setOpen(!open)}>
               <img src={currentUser.img || "/img/noavatar.jpg"} alt="" />
@@ -57,15 +54,15 @@ function Navbar() {
                   {currentUser.isSeller && (
                     <>
                       <Link className="link" to="/mygigs">
-                        Gigs
+                        Projects
                       </Link>
                       <Link className="link" to="/add">
-                        Add New Gig
+                        Add New Project
                       </Link>
                     </>
                   )}
                   <Link className="link" to="/orders">
-                    Orders
+                    Proposals
                   </Link>
                   <Link className="link" to="/messages">
                     Messages

@@ -42,7 +42,7 @@ const Orders = () => {
       ) : (
         <div className="container">
           <div className="title">
-            <h1>Orders</h1>
+            <h1>Proposals</h1>
           </div>
           <table>
             <tr>
